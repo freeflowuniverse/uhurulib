@@ -1,2 +1,7 @@
-# herolib_gitea
-client &amp; tools for herolib
+# library for mail, calendar & contacts in hero
+
+- smtp
+- imap (first implementation, but not usable yet)
+- webdav (need to be moved from herolib still)
+- caldav (first AI generated model done)
+- cardav
