@@ -1,2 +1,2 @@
-# uhuru_backend
-backend for gdmail, gdrive alternative
+# herolib_gitea
+client &amp; tools for herolib
