@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>lib.calendar.calbox | vdoc</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="doc.css" />
+		<link rel="stylesheet" href="normalize.css" />
+		<script src="dark-mode.js"></script>
+	</head>
+
+	<body>
+		<div><a id="skip-to-content-link" href="#main-content">Skip to content</a></div>
+		<div id="page">
+			<header class="doc-nav hidden">
+				<div class="heading-container">
+					<div class="heading">
+						<div class="info">
+							<div class="module">lib</div>
+							<div class="toggle-version-container">
+								<span> 089778e</span>
+								<div
+									id="dark-mode-toggle"
+									role="switch"
+									aria-checked="false"
+									aria-label="Toggle dark mode"
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" class="light-icon" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dark-icon" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><g><path d="M11.1,12.08C8.77,7.57,10.6,3.6,11.63,2.01C6.27,2.2,1.98,6.59,1.98,12c0,0.14,0.02,0.28,0.02,0.42 C2.62,12.15,3.29,12,4,12c1.66,0,3.18,0.83,4.1,2.15C9.77,14.63,11,16.17,11,18c0,1.52-0.87,2.83-2.12,3.51 c0.98,0.32,2.03,0.5,3.11,0.5c3.5,0,6.58-1.8,8.37-4.52C18,17.72,13.38,16.52,11.1,12.08z"/></g><path d="M7,16l-0.18,0C6.4,14.84,5.3,14,4,14c-1.66,0-3,1.34-3,3s1.34,3,3,3c0.62,0,2.49,0,3,0c1.1,0,2-0.9,2-2 C9,16.9,8.1,16,7,16z"/></g></g></svg>
+
+								</div>
+							</div>
+							<svg xmlns="http://www.w3.org/2000/svg" id="toggle-menu" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+
+						</div>
+						<div id="search">
+							<input type="text" placeholder="Search... (beta)" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+				<nav class="search hidden"></nav>
+				<nav class="content hidden">
+					<ul>
+						<li class="open">
+<div class="menu-row"><a href="./index.html">README</a></div>
+</li>
+<li class="open active">
+<div class="menu-row"><svg xmlns="http://www.w3.org/2000/svg" class="dropdown-arrow" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg><a href="#">lib</a></div>
+<ul>
+<li class="active"><a href="./lib.calendar.calbox.html">calendar.calbox</a></li>
+<li><a href="./lib.calendar.caldav.html">calendar.caldav</a></li>
+<li><a href="./lib.mail.imap.html">mail.imap</a></li>
+<li><a href="./lib.mail.mailbox.html">mail.mailbox</a></li>
+<li><a href="./lib.mail.server.html">mail.server</a></li>
+<li><a href="./lib.mail.smtp.html">mail.smtp</a></li>
+</ul>
+</li>
+
+					</ul>
+				</nav>
+			</header>
+			<div class="doc-scrollview" tabindex="-1" id="main-content">
+				<div class="doc-container">
+					<div class="doc-content">
+								<section id="readme_lib.calendar.calbox" class="doc-node">
+			<div class="title"><h1> lib.calendar.calbox <a href="#readme_lib.calendar.calbox">#</a></h1></div>
+
+
+</section>
+
+		<section id="expand_recurring_event" class="doc-node">
+			<div class="title"><h2>fn expand_recurring_event <a href="#expand_recurring_event">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">expand_recurring_event</span><span class="token punctuation">(</span>event Event<span class="token punctuation">,</span> tr TimeRange<span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span>EventInstance</code></pre>
+<p>Expands a recurring event into individual instances within a time range</p>
+
+</section>
+
+		<section id="format_date" class="doc-node">
+			<div class="title"><h2>fn format_date <a href="#format_date">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">format_date</span><span class="token punctuation">(</span>ts <span class="token builtin">i64</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>Converts a timestamp to iCalendar date format (YYYYMMDD)</p>
+
+</section>
+
+		<section id="format_date_or_datetime" class="doc-node">
+			<div class="title"><h2>fn format_date_or_datetime <a href="#format_date_or_datetime">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">format_date_or_datetime</span><span class="token punctuation">(</span>ts <span class="token builtin">i64</span><span class="token punctuation">,</span> has_time <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>Formats a timestamp as either date or date-time based on has_time flag</p>
+
+</section>
+
+		<section id="format_datetime_utc" class="doc-node">
+			<div class="title"><h2>fn format_datetime_utc <a href="#format_datetime_utc">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">format_datetime_utc</span><span class="token punctuation">(</span>ts <span class="token builtin">i64</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>Converts a timestamp to iCalendar UTC date-time format (YYYYMMDDTHHMMSSZ)</p>
+
+</section>
+
+		<section id="new" class="doc-node">
+			<div class="title"><h2>fn new <a href="#new">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">new</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">&</span>Calendar</code></pre>
+<p>Creates a new calendar collection</p>
+
+</section>
+
+		<section id="parse_alarm_action" class="doc-node">
+			<div class="title"><h2>fn parse_alarm_action <a href="#parse_alarm_action">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_alarm_action</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>AlarmAction</code></pre>
+<p>Parse alarm action from string</p>
+
+</section>
+
+		<section id="parse_attendee_partstat" class="doc-node">
+			<div class="title"><h2>fn parse_attendee_partstat <a href="#parse_attendee_partstat">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_attendee_partstat</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>AttendeePartStat</code></pre>
+<p>Parse participation status from string</p>
+
+</section>
+
+		<section id="parse_attendee_role" class="doc-node">
+			<div class="title"><h2>fn parse_attendee_role <a href="#parse_attendee_role">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_attendee_role</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>AttendeeRole</code></pre>
+<p>Parse attendee role from string</p>
+
+</section>
+
+		<section id="parse_component_class" class="doc-node">
+			<div class="title"><h2>fn parse_component_class <a href="#parse_component_class">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_component_class</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>ComponentClass</code></pre>
+<p>Parse component class from string</p>
+
+</section>
+
+		<section id="parse_component_status" class="doc-node">
+			<div class="title"><h2>fn parse_component_status <a href="#parse_component_status">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_component_status</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>ComponentStatus</code></pre>
+<p>Parse component status from string</p>
+
+</section>
+
+		<section id="parse_date" class="doc-node">
+			<div class="title"><h2>fn parse_date <a href="#parse_date">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_date</span><span class="token punctuation">(</span>d <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token builtin">i64</span></code></pre>
+<p>Parses an iCalendar date string to timestamp</p>
+
+</section>
+
+		<section id="parse_date_or_datetime" class="doc-node">
+			<div class="title"><h2>fn parse_date_or_datetime <a href="#parse_date_or_datetime">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_date_or_datetime</span><span class="token punctuation">(</span>value <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token builtin">i64</span></code></pre>
+<p>Parses a date or date-time string</p>
+
+</section>
+
+		<section id="parse_datetime" class="doc-node">
+			<div class="title"><h2>fn parse_datetime <a href="#parse_datetime">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_datetime</span><span class="token punctuation">(</span>dt <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token builtin">i64</span></code></pre>
+<p>Parses an iCalendar date-time string to timestamp</p>
+
+</section>
+
+		<section id="parse_duration" class="doc-node">
+			<div class="title"><h2>fn parse_duration <a href="#parse_duration">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_duration</span><span class="token punctuation">(</span>iso_duration <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>Duration</code></pre>
+<p>Parses an ISO 8601 duration string (e.g. PT1H30M)</p>
+
+</section>
+
+		<section id="parse_event_transp" class="doc-node">
+			<div class="title"><h2>fn parse_event_transp <a href="#parse_event_transp">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_event_transp</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>EventTransp</code></pre>
+<p>Parse event transparency from string</p>
+
+</section>
+
+		<section id="parse_recurrence_frequency" class="doc-node">
+			<div class="title"><h2>fn parse_recurrence_frequency <a href="#parse_recurrence_frequency">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">parse_recurrence_frequency</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span>RecurrenceFrequency</code></pre>
+<p>Parse recurrence frequency from string</p>
+
+</section>
+
+		<section id="AlarmAction" class="doc-node">
+			<div class="title"><h2>enum AlarmAction <a href="#AlarmAction">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">AlarmAction</span> <span class="token punctuation">{</span>
+	audio   <span class="token comment">// Play a sound</span>
+	display <span class="token comment">// Display a message</span>
+	email   <span class="token comment">// Send an email</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Alarm action types</p>
+
+</section>
+
+		<section id="AlarmAction.str" class="doc-node">
+			<div class="title"><h2>fn (AlarmAction) str <a href="#AlarmAction.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>a AlarmAction<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of alarm action</p>
+
+</section>
+
+		<section id="AttendeePartStat" class="doc-node">
+			<div class="title"><h2>enum AttendeePartStat <a href="#AttendeePartStat">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">AttendeePartStat</span> <span class="token punctuation">{</span>
+	needs_action <span class="token comment">// No response yet</span>
+	accepted     <span class="token comment">// Accepted invitation</span>
+	declined     <span class="token comment">// Declined invitation</span>
+	tentative    <span class="token comment">// Tentatively accepted</span>
+	delegated    <span class="token comment">// Delegated to another</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Attendee participation status</p>
+
+</section>
+
+		<section id="AttendeePartStat.str" class="doc-node">
+			<div class="title"><h2>fn (AttendeePartStat) str <a href="#AttendeePartStat.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>p AttendeePartStat<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of participation status</p>
+
+</section>
+
+		<section id="AttendeeRole" class="doc-node">
+			<div class="title"><h2>enum AttendeeRole <a href="#AttendeeRole">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">AttendeeRole</span> <span class="token punctuation">{</span>
+	chair           <span class="token comment">// Meeting chair/organizer</span>
+	req_participant <span class="token comment">// Required participant</span>
+	opt_participant <span class="token comment">// Optional participant</span>
+	non_participant <span class="token comment">// Non-participant (e.g. room, resource)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Attendee role types</p>
+
+</section>
+
+		<section id="AttendeeRole.str" class="doc-node">
+			<div class="title"><h2>fn (AttendeeRole) str <a href="#AttendeeRole.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>r AttendeeRole<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of attendee role</p>
+
+</section>
+
+		<section id="ComponentClass" class="doc-node">
+			<div class="title"><h2>enum ComponentClass <a href="#ComponentClass">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">ComponentClass</span> <span class="token punctuation">{</span>
+	public       <span class="token comment">// Visible to everyone</span>
+	private      <span class="token comment">// Only visible to owner</span>
+	confidential <span class="token comment">// Limited visibility</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Calendar component class (visibility/privacy)</p>
+
+</section>
+
+		<section id="ComponentClass.str" class="doc-node">
+			<div class="title"><h2>fn (ComponentClass) str <a href="#ComponentClass.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>c ComponentClass<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of component class</p>
+
+</section>
+
+		<section id="ComponentStatus" class="doc-node">
+			<div class="title"><h2>enum ComponentStatus <a href="#ComponentStatus">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">ComponentStatus</span> <span class="token punctuation">{</span>
+	tentative    <span class="token comment">// Tentatively scheduled</span>
+	confirmed    <span class="token comment">// Confirmed</span>
+	cancelled    <span class="token comment">// Cancelled/deleted</span>
+	needs_action <span class="token comment">// Todo needs action</span>
+	completed    <span class="token comment">// Todo completed</span>
+	in_process   <span class="token comment">// Todo in progress</span>
+	draft        <span class="token comment">// Journal draft</span>
+	final        <span class="token comment">// Journal final</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Calendar component status</p>
+
+</section>
+
+		<section id="ComponentStatus.str" class="doc-node">
+			<div class="title"><h2>fn (ComponentStatus) str <a href="#ComponentStatus.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>s ComponentStatus<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of component status</p>
+
+</section>
+
+		<section id="ComponentType" class="doc-node">
+			<div class="title"><h2>enum ComponentType <a href="#ComponentType">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">ComponentType</span> <span class="token punctuation">{</span>
+	vevent
+	vtodo
+	vjournal
+<span class="token punctuation">}</span></code></pre>
+<p>Component type enum</p>
+
+</section>
+
+		<section id="EventTransp" class="doc-node">
+			<div class="title"><h2>enum EventTransp <a href="#EventTransp">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">EventTransp</span> <span class="token punctuation">{</span>
+	opaque      <span class="token comment">// Blocks time (shows as busy)</span>
+	transparent <span class="token comment">// Does not block time (shows as free)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Event transparency (busy time)</p>
+
+</section>
+
+		<section id="EventTransp.str" class="doc-node">
+			<div class="title"><h2>fn (EventTransp) str <a href="#EventTransp.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>t EventTransp<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of event transparency</p>
+
+</section>
+
+		<section id="RecurrenceFrequency" class="doc-node">
+			<div class="title"><h2>enum RecurrenceFrequency <a href="#RecurrenceFrequency">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">enum</span> <span class="token symbol">RecurrenceFrequency</span> <span class="token punctuation">{</span>
+	secondly
+	minutely
+	hourly
+	daily
+	weekly
+	monthly
+	yearly
+<span class="token punctuation">}</span></code></pre>
+<p>Recurrence frequency types</p>
+
+</section>
+
+		<section id="RecurrenceFrequency.str" class="doc-node">
+			<div class="title"><h2>fn (RecurrenceFrequency) str <a href="#RecurrenceFrequency.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>f RecurrenceFrequency<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>String representation of recurrence frequency</p>
+
+</section>
+
+		<section id="Alarm" class="doc-node">
+			<div class="title"><h2>struct Alarm <a href="#Alarm">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Alarm</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	action      AlarmAction
+	trigger     <span class="token builtin">string</span>     <span class="token comment">// When the alarm triggers (relative or absolute)</span>
+	description <span class="token builtin">string</span>     <span class="token comment">// Used for DISPLAY and EMAIL</span>
+	summary     <span class="token builtin">string</span>     <span class="token comment">// Used for EMAIL</span>
+	attendees   <span class="token punctuation">[</span><span class="token punctuation">]</span>Attendee <span class="token comment">// Used for EMAIL</span>
+	attach      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>   <span class="token comment">// Used for AUDIO and EMAIL attachments</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents an alarm/reminder</p>
+
+</section>
+
+		<section id="Attendee" class="doc-node">
+			<div class="title"><h2>struct Attendee <a href="#Attendee">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Attendee</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	email          <span class="token builtin">string</span>
+	name           <span class="token builtin">string</span>
+	role           AttendeeRole
+	partstat       AttendeePartStat
+	rsvp           <span class="token builtin">bool</span>
+	delegated_to   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+	delegated_from <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a calendar attendee</p>
+
+</section>
+
+		<section id="Calendar" class="doc-node">
+			<div class="title"><h2>struct Calendar <a href="#Calendar">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Calendar</span> <span class="token punctuation">{</span>
+<span class="token keyword">mut</span><span class="token punctuation">:</span>
+	name        <span class="token builtin">string</span>
+	objects     <span class="token punctuation">[</span><span class="token punctuation">]</span>CalendarItem
+	description <span class="token builtin">string</span>
+	timezone    <span class="token builtin">string</span> <span class="token comment">// Calendar timezone as iCalendar VTIMEZONE</span>
+	read_only   <span class="token builtin">bool</span>   <span class="token comment">// Whether calendar is read-only</span>
+
+	<span class="token comment">// Properties from CalDAV spec</span>
+	supported_components <span class="token punctuation">[</span><span class="token punctuation">]</span>ComponentType <span class="token comment">// e.g. [.vevent, .vtodo]</span>
+	min_date_time        <span class="token builtin">string</span>          <span class="token comment">// Earliest date allowed</span>
+	max_date_time        <span class="token builtin">string</span>          <span class="token comment">// Latest date allowed</span>
+	max_instances        <span class="token builtin">int</span>             <span class="token comment">// Max recurrence instances</span>
+	max_attendees        <span class="token builtin">int</span>             <span class="token comment">// Max attendees per instance</span>
+	max_resource_size    <span class="token builtin">int</span>             <span class="token comment">// Max size of calendar object</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a calendar collection</p>
+
+</section>
+
+		<section id="Calendar.list" class="doc-node">
+			<div class="title"><h2>fn (Calendar) list <a href="#Calendar.list">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>CalendarItem</code></pre>
+<p>Returns all calendar objects</p>
+
+</section>
+
+		<section id="Calendar.get_by_uid" class="doc-node">
+			<div class="title"><h2>fn (Calendar) get_by_uid <a href="#Calendar.get_by_uid">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">get_by_uid</span><span class="token punctuation">(</span>uid <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span>CalendarItem</code></pre>
+<p>Gets a calendar object by UID</p>
+
+</section>
+
+		<section id="Calendar.delete" class="doc-node">
+			<div class="title"><h2>fn (Calendar) delete <a href="#Calendar.delete">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">delete</span><span class="token punctuation">(</span>uid <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>Deletes a calendar object by UID</p>
+
+</section>
+
+		<section id="Calendar.put" class="doc-node">
+			<div class="title"><h2>fn (Calendar) put <a href="#Calendar.put">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">put</span><span class="token punctuation">(</span>obj CalendarItem<span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>Adds or updates a calendar object</p>
+
+</section>
+
+		<section id="Calendar.find_by_time" class="doc-node">
+			<div class="title"><h2>fn (Calendar) find_by_time <a href="#Calendar.find_by_time">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">find_by_time</span><span class="token punctuation">(</span>tr TimeRange<span class="token punctuation">)</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>CalendarItem</code></pre>
+<p>Finds calendar objects in the given time range</p>
+
+</section>
+
+		<section id="Calendar.get_instances" class="doc-node">
+			<div class="title"><h2>fn (Calendar) get_instances <a href="#Calendar.get_instances">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">get_instances</span><span class="token punctuation">(</span>tr TimeRange<span class="token punctuation">)</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>EventInstance</code></pre>
+<p>Gets all instances of calendar objects in a time range</p>
+
+</section>
+
+		<section id="Calendar.get_freebusy" class="doc-node">
+			<div class="title"><h2>fn (Calendar) get_freebusy <a href="#Calendar.get_freebusy">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">get_freebusy</span><span class="token punctuation">(</span>tr TimeRange<span class="token punctuation">)</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>TimeRange</code></pre>
+<p>Gets free/busy time in a given range</p>
+
+</section>
+
+		<section id="Calendar.len" class="doc-node">
+			<div class="title"><h2>fn (Calendar) len <a href="#Calendar.len">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Calendar<span class="token punctuation">)</span> <span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span></code></pre>
+<p>Returns number of calendar objects</p>
+
+</section>
+
+		<section id="CalendarComponent" class="doc-node">
+			<div class="title"><h2>struct CalendarComponent <a href="#CalendarComponent">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">CalendarComponent</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	uid         <span class="token builtin">string</span>
+	etag        <span class="token builtin">string</span> <span class="token comment">// Entity tag for change tracking</span>
+	created     <span class="token builtin">i64</span>    <span class="token comment">// Creation timestamp</span>
+	modified    <span class="token builtin">i64</span>    <span class="token comment">// Last modified timestamp</span>
+	summary     <span class="token builtin">string</span>
+	description <span class="token builtin">string</span>
+	categories  <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+	status      ComponentStatus
+	class       ComponentClass
+	url         <span class="token builtin">string</span>
+	location    <span class="token builtin">string</span>
+	geo         <span class="token operator">?</span>GeoLocation
+	alarms      <span class="token punctuation">[</span><span class="token punctuation">]</span>Alarm
+<span class="token punctuation">}</span></code></pre>
+<p>Base calendar component fields</p>
+
+</section>
+
+		<section id="CalendarItem" class="doc-node">
+			<div class="title"><h2>struct CalendarItem <a href="#CalendarItem">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">CalendarItem</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	comp_type ComponentType <span class="token comment">// Type of calendar component : vevent, vtodo, vjournal</span>
+	event     <span class="token operator">?</span>Event        <span class="token comment">// Set if comp_type is .vevent</span>
+	todo      <span class="token operator">?</span>Todo         <span class="token comment">// Set if comp_type is .vtodo</span>
+	journal   <span class="token operator">?</span>Journal      <span class="token comment">// Set if comp_type is .vjournal</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a calendar object resource (event, todo, journal)</p>
+
+</section>
+
+		<section id="Duration" class="doc-node">
+			<div class="title"><h2>struct Duration <a href="#Duration">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Duration</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span><span class="token punctuation">:</span>
+	seconds <span class="token builtin">i64</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a duration in seconds</p>
+
+</section>
+
+		<section id="Duration.str" class="doc-node">
+			<div class="title"><h2>fn (Duration) str <a href="#Duration.str">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>d Duration<span class="token punctuation">)</span> <span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+<p>Formats the duration as an ISO 8601 duration string</p>
+
+</section>
+
+		<section id="Duration.add_to" class="doc-node">
+			<div class="title"><h2>fn (Duration) add_to <a href="#Duration.add_to">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>d Duration<span class="token punctuation">)</span> <span class="token function">add_to</span><span class="token punctuation">(</span>timestamp <span class="token builtin">i64</span><span class="token punctuation">)</span> <span class="token builtin">i64</span></code></pre>
+<p>Adds the duration to a timestamp</p>
+
+</section>
+
+		<section id="Duration.subtract_from" class="doc-node">
+			<div class="title"><h2>fn (Duration) subtract_from <a href="#Duration.subtract_from">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>d Duration<span class="token punctuation">)</span> <span class="token function">subtract_from</span><span class="token punctuation">(</span>timestamp <span class="token builtin">i64</span><span class="token punctuation">)</span> <span class="token builtin">i64</span></code></pre>
+<p>Subtracts the duration from a timestamp</p>
+
+</section>
+
+		<section id="Event" class="doc-node">
+			<div class="title"><h2>struct Event <a href="#Event">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Event</span> <span class="token punctuation">{</span>
+	CalendarComponent
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	start_time <span class="token builtin">i64</span>
+	end_time   <span class="token operator">?</span><span class="token builtin">i64</span>    <span class="token comment">// Either end_time or duration must be set</span>
+	duration   <span class="token operator">?</span><span class="token builtin">string</span> <span class="token comment">// ISO 8601 duration format</span>
+	rrule      <span class="token operator">?</span>RecurrenceRule
+	rdate      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">i64</span> <span class="token comment">// Additional recurrence dates</span>
+	exdate     <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">i64</span> <span class="token comment">// Dates to exclude</span>
+	transp     EventTransp
+	attendees  <span class="token punctuation">[</span><span class="token punctuation">]</span>Attendee
+	organizer  <span class="token operator">?</span>Attendee
+<span class="token punctuation">}</span></code></pre>
+<p>Represents an event</p>
+
+</section>
+
+		<section id="Event.get_effective_end_time" class="doc-node">
+			<div class="title"><h2>fn (Event) get_effective_end_time <a href="#Event.get_effective_end_time">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>event Event<span class="token punctuation">)</span> <span class="token function">get_effective_end_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token builtin">i64</span></code></pre>
+<p>Gets the effective end time of an event</p>
+
+</section>
+
+		<section id="Event.get_instances" class="doc-node">
+			<div class="title"><h2>fn (Event) get_instances <a href="#Event.get_instances">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span>event Event<span class="token punctuation">)</span> <span class="token function">get_instances</span><span class="token punctuation">(</span>tr TimeRange<span class="token punctuation">)</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>EventInstance</code></pre>
+<p>Gets all instances of an event that overlap with a time range</p>
+
+</section>
+
+		<section id="EventInstance" class="doc-node">
+			<div class="title"><h2>struct EventInstance <a href="#EventInstance">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">EventInstance</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span><span class="token punctuation">:</span>
+	original_event Event <span class="token comment">// Reference to original event</span>
+	start_time     <span class="token builtin">i64</span>   <span class="token comment">// Start time of this instance</span>
+	end_time       <span class="token builtin">i64</span>   <span class="token comment">// End time of this instance</span>
+	recurrence_id  <span class="token builtin">i64</span>   <span class="token comment">// RECURRENCE-ID for this instance</span>
+	is_override    <span class="token builtin">bool</span>  <span class="token comment">// Whether this is an overridden instance</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a single instance of a recurring event</p>
+
+</section>
+
+		<section id="GeoLocation" class="doc-node">
+			<div class="title"><h2>struct GeoLocation <a href="#GeoLocation">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">GeoLocation</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	latitude  <span class="token builtin">f64</span>
+	longitude <span class="token builtin">f64</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Geographic location</p>
+
+</section>
+
+		<section id="Journal" class="doc-node">
+			<div class="title"><h2>struct Journal <a href="#Journal">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Journal</span> <span class="token punctuation">{</span>
+	CalendarComponent
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	start_time <span class="token builtin">i64</span> <span class="token comment">// Date of the journal entry</span>
+	attendees  <span class="token punctuation">[</span><span class="token punctuation">]</span>Attendee
+	organizer  <span class="token operator">?</span>Attendee
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a journal entry</p>
+
+</section>
+
+		<section id="RecurrenceRule" class="doc-node">
+			<div class="title"><h2>struct RecurrenceRule <a href="#RecurrenceRule">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">RecurrenceRule</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	frequency   RecurrenceFrequency
+	interval    <span class="token builtin">int</span>  <span class="token comment">// How often the recurrence rule repeats</span>
+	count       <span class="token operator">?</span><span class="token builtin">int</span> <span class="token comment">// Number of occurrences</span>
+	until       <span class="token operator">?</span><span class="token builtin">i64</span> <span class="token comment">// End date timestamp</span>
+	by_second   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_minute   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_hour     <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_day      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token comment">// MO, TU, WE, TH, FR, SA, SU with optional +/-prefix</span>
+	by_monthday <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_yearday  <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_weekno   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_month    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	by_setpos   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+	week_start  <span class="token builtin">string</span> <span class="token comment">// MO, TU, WE, TH, FR, SA, SU</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a recurrence rule</p>
+
+</section>
+
+		<section id="TimeRange" class="doc-node">
+			<div class="title"><h2>struct TimeRange <a href="#TimeRange">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[params]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">TimeRange</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	start <span class="token builtin">i64</span> <span class="token comment">// UTC timestamp (epoch)</span>
+	end   <span class="token builtin">i64</span> <span class="token comment">// UTC timestamp</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+</section>
+
+		<section id="Todo" class="doc-node">
+			<div class="title"><h2>struct Todo <a href="#Todo">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Todo</span> <span class="token punctuation">{</span>
+	CalendarComponent
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	start_time <span class="token operator">?</span><span class="token builtin">i64</span>    <span class="token comment">// Optional start time</span>
+	due_time   <span class="token operator">?</span><span class="token builtin">i64</span>    <span class="token comment">// When the todo is due</span>
+	duration   <span class="token operator">?</span><span class="token builtin">string</span> <span class="token comment">// Estimated duration</span>
+	completed  <span class="token operator">?</span><span class="token builtin">i64</span>    <span class="token comment">// When the todo was completed</span>
+	percent    <span class="token operator">?</span><span class="token builtin">int</span>    <span class="token comment">// Percent complete (0-100)</span>
+	rrule      <span class="token operator">?</span>RecurrenceRule
+	attendees  <span class="token punctuation">[</span><span class="token punctuation">]</span>Attendee
+	organizer  <span class="token operator">?</span>Attendee
+<span class="token punctuation">}</span></code></pre>
+<p>Represents a todo/task</p>
+
+</section>
+
+
+						<div class="footer">Powered by vdoc.</div>
+					</div>
+					<div class="doc-toc"><ul><li class="open"><a href="#expand_recurring_event">fn expand_recurring_event</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#format_date">fn format_date</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#format_date_or_datetime">fn format_date_or_datetime</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#format_datetime_utc">fn format_datetime_utc</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#new">fn new</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_alarm_action">fn parse_alarm_action</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_attendee_partstat">fn parse_attendee_partstat</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_attendee_role">fn parse_attendee_role</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_component_class">fn parse_component_class</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_component_status">fn parse_component_status</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_date">fn parse_date</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_date_or_datetime">fn parse_date_or_datetime</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_datetime">fn parse_datetime</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_duration">fn parse_duration</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_event_transp">fn parse_event_transp</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#parse_recurrence_frequency">fn parse_recurrence_frequency</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#AlarmAction">enum AlarmAction</a>        <ul>
+<li><a href="#AlarmAction.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#AttendeePartStat">enum AttendeePartStat</a>        <ul>
+<li><a href="#AttendeePartStat.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#AttendeeRole">enum AttendeeRole</a>        <ul>
+<li><a href="#AttendeeRole.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#ComponentClass">enum ComponentClass</a>        <ul>
+<li><a href="#ComponentClass.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#ComponentStatus">enum ComponentStatus</a>        <ul>
+<li><a href="#ComponentStatus.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#ComponentType">enum ComponentType</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#EventTransp">enum EventTransp</a>        <ul>
+<li><a href="#EventTransp.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#RecurrenceFrequency">enum RecurrenceFrequency</a>        <ul>
+<li><a href="#RecurrenceFrequency.str">fn str</a></li>
+</ul>
+</li>
+<li class="open"><a href="#Alarm">struct Alarm</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Attendee">struct Attendee</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Calendar">struct Calendar</a>        <ul>
+<li><a href="#Calendar.list">fn list</a></li>
+<li><a href="#Calendar.get_by_uid">fn get_by_uid</a></li>
+<li><a href="#Calendar.delete">fn delete</a></li>
+<li><a href="#Calendar.put">fn put</a></li>
+<li><a href="#Calendar.find_by_time">fn find_by_time</a></li>
+<li><a href="#Calendar.get_instances">fn get_instances</a></li>
+<li><a href="#Calendar.get_freebusy">fn get_freebusy</a></li>
+<li><a href="#Calendar.len">fn len</a></li>
+</ul>
+</li>
+<li class="open"><a href="#CalendarComponent">struct CalendarComponent</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#CalendarItem">struct CalendarItem</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Duration">struct Duration</a>        <ul>
+<li><a href="#Duration.str">fn str</a></li>
+<li><a href="#Duration.add_to">fn add_to</a></li>
+<li><a href="#Duration.subtract_from">fn subtract_from</a></li>
+</ul>
+</li>
+<li class="open"><a href="#Event">struct Event</a>        <ul>
+<li><a href="#Event.get_effective_end_time">fn get_effective_end_time</a></li>
+<li><a href="#Event.get_instances">fn get_instances</a></li>
+</ul>
+</li>
+<li class="open"><a href="#EventInstance">struct EventInstance</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#GeoLocation">struct GeoLocation</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Journal">struct Journal</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#RecurrenceRule">struct RecurrenceRule</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#TimeRange">struct TimeRange</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Todo">struct Todo</a>        <ul>
+</ul>
+</li>
+</ul></div>
+				</div>
+			</div>
+		</div>
+		<script src="doc.js"></script>
+		<script async src="search_index.js"></script>
+	</body>
+</html>

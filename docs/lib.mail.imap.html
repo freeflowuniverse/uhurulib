@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>lib.mail.imap | vdoc</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="doc.css" />
+		<link rel="stylesheet" href="normalize.css" />
+		<script src="dark-mode.js"></script>
+	</head>
+
+	<body>
+		<div><a id="skip-to-content-link" href="#main-content">Skip to content</a></div>
+		<div id="page">
+			<header class="doc-nav hidden">
+				<div class="heading-container">
+					<div class="heading">
+						<div class="info">
+							<div class="module">lib</div>
+							<div class="toggle-version-container">
+								<span> 089778e</span>
+								<div
+									id="dark-mode-toggle"
+									role="switch"
+									aria-checked="false"
+									aria-label="Toggle dark mode"
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" class="light-icon" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dark-icon" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><g><path d="M11.1,12.08C8.77,7.57,10.6,3.6,11.63,2.01C6.27,2.2,1.98,6.59,1.98,12c0,0.14,0.02,0.28,0.02,0.42 C2.62,12.15,3.29,12,4,12c1.66,0,3.18,0.83,4.1,2.15C9.77,14.63,11,16.17,11,18c0,1.52-0.87,2.83-2.12,3.51 c0.98,0.32,2.03,0.5,3.11,0.5c3.5,0,6.58-1.8,8.37-4.52C18,17.72,13.38,16.52,11.1,12.08z"/></g><path d="M7,16l-0.18,0C6.4,14.84,5.3,14,4,14c-1.66,0-3,1.34-3,3s1.34,3,3,3c0.62,0,2.49,0,3,0c1.1,0,2-0.9,2-2 C9,16.9,8.1,16,7,16z"/></g></g></svg>
+
+								</div>
+							</div>
+							<svg xmlns="http://www.w3.org/2000/svg" id="toggle-menu" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+
+						</div>
+						<div id="search">
+							<input type="text" placeholder="Search... (beta)" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+				<nav class="search hidden"></nav>
+				<nav class="content hidden">
+					<ul>
+						<li class="open">
+<div class="menu-row"><a href="./index.html">README</a></div>
+</li>
+<li class="open">
+<div class="menu-row"><svg xmlns="http://www.w3.org/2000/svg" class="dropdown-arrow" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg><a href="#">lib</a></div>
+<ul>
+<li><a href="./lib.calendar.calbox.html">calendar.calbox</a></li>
+<li><a href="./lib.calendar.caldav.html">calendar.caldav</a></li>
+<li class="active"><a href="./lib.mail.imap.html">mail.imap</a></li>
+<li><a href="./lib.mail.mailbox.html">mail.mailbox</a></li>
+<li><a href="./lib.mail.server.html">mail.server</a></li>
+<li><a href="./lib.mail.smtp.html">mail.smtp</a></li>
+</ul>
+</li>
+
+					</ul>
+				</nav>
+			</header>
+			<div class="doc-scrollview" tabindex="-1" id="main-content">
+				<div class="doc-container">
+					<div class="doc-content">
+								<section id="readme_lib.mail.imap" class="doc-node">
+			<div class="title"><h1> lib.mail.imap <a href="#readme_lib.mail.imap">#</a></h1></div>
+<h1>IMAP Server</h1><p>A simple IMAP server implementation in V that supports basic mailbox operations.</p><h2>Features</h2><ul><li>IMAP server implementation with persistent storage via mailbox module</li><li>Support for multiple mailboxes</li><li>Basic IMAP commands: LOGIN, SELECT, FETCH, STORE, LOGOUT</li><li>Message flags support (e.g. \Seen, \Flagged)</li><li>Concurrent client handling</li></ul><h2>Usage</h2><p>The server can be started with a simple function call:</p><pre><code class="language-v"><span class="token keyword">import</span> freeflowuniverse<span class="token punctuation">.</span>herolib<span class="token punctuation">.</span>servers<span class="token punctuation">.</span>mail<span class="token punctuation">.</span>imap
+<span class="token keyword">import</span> freeflowuniverse<span class="token punctuation">.</span>herolib<span class="token punctuation">.</span>servers<span class="token punctuation">.</span>mail<span class="token punctuation">.</span>mailbox
+
+<span class="token keyword">fn</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Create the mail server</span>
+    <span class="token keyword">mut</span> mailserver <span class="token operator">:=</span> mailbox<span class="token punctuation">.</span><span class="token function">new_mail_server</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// Create the IMAP server wrapping the mail server</span>
+    <span class="token keyword">mut</span> imap_server <span class="token operator">:=</span> imap<span class="token punctuation">.</span><span class="token function">new_server</span><span class="token punctuation">(</span>mailserver<span class="token punctuation">)</span>
+
+    <span class="token comment">// Start the IMAP server on port 143</span>
+    imap_server<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">{</span> <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><p>Save this to <code>example.v</code> and run with:</p><pre><code class="language-bash">v run example<span class="token punctuation">.</span>v</code></pre><p>The server will start listening on port 143 (default IMAP port).</p><h2>Testing with an IMAP Client</h2><p>You can test the server using any IMAP client. Here's an example using the <code>curl</code> command:</p><pre><code class="language-bash">##curl <span class="token string">'imap://localhost/'</span> <span class="token operator">-</span>u <span class="token string">'user:pass'</span> <span class="token operator">--</span>ssl<span class="token operator">-</span>reqd
+
+##curl <span class="token string">'imap://localhost/INBOX'</span> <span class="token operator">-</span>u <span class="token string">'user:pass'</span> <span class="token operator">--</span>ssl<span class="token operator">-</span>reqd</code></pre><h2>Implementation Details</h2><p>The server consists of two main components:</p><ol><li><strong>Mailbox Module</strong> (<code>mailbox/</code>): Core mail functionality</li></ol><ul><li>User account management</li><li>Mailbox operations (create, delete, list)</li><li>Message storage and retrieval</li><li>Message flag management</li><li>Search capabilities</li></ul><ol start="2"><li><strong>IMAP Server</strong> (<code>imap/</code>): IMAP protocol implementation</li></ol><ul><li>TCP connection handling and session management</li><li>IMAP command processing</li><li>Maps IMAP operations to mailbox module functionality</li><li>Concurrent client support</li></ul><h2>Supported Commands</h2><ul><li><code>CAPABILITY</code>: List server capabilities</li><li><code>LOGIN</code>: Authenticate (accepts any credentials)</li><li><code>SELECT</code>: Select a mailbox</li><li><code>FETCH</code>: Retrieve message data</li><li><code>STORE</code>: Update message flags</li><li><code>LOGOUT</code>: End the session</li></ul><h2>Example Session</h2><pre><code>C: A001 CAPABILITY
+S: * CAPABILITY IMAP4rev1 AUTH=PLAIN
+S: A001 OK CAPABILITY completed
+
+C: A002 LOGIN user pass
+S: A002 OK LOGIN completed
+
+C: A003 SELECT INBOX
+S: * FLAGS (\Answered \Flagged \Deleted \Seen \Draft)
+S: * 2 EXISTS
+S: A003 OK SELECT completed
+
+C: A004 FETCH 1:* BODY[TEXT]
+S: * 1 FETCH (FLAGS (\Seen) BODY[TEXT] &#34;Welcome to the IMAP server!&#34;)
+S: * 2 FETCH (FLAGS () BODY[TEXT] &#34;This is an update.&#34;)
+S: A004 OK FETCH completed
+
+C: A005 STORE 2 +FLAGS (\Seen)
+S: A005 OK STORE completed
+
+C: A006 CAPABILITY
+S: * CAPABILITY IMAP4rev1 AUTH=PLAIN
+S: A006 OK CAPABILITY completed
+
+C: A007 LOGOUT
+S: * BYE IMAP4rev1 Server logging out
+S: A007 OK LOGOUT completed
+</code></pre><h2>Notes</h2><ul><li>The server runs on port 143, which typically requires root privileges. Make sure you have the necessary permissions.</li><li>This is a basic implementation for demonstration purposes. For production use, consider adding:</li><li>Proper authentication</li><li>Full IMAP command support</li><li>TLS encryption</li><li>Message parsing and MIME support</li></ul>
+
+</section>
+
+		<section id="new" class="doc-node">
+			<div class="title"><h2>fn new <a href="#new">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token function">new</span><span class="token punctuation">(</span>mailboxserver <span class="token operator">&</span>mailbox<span class="token punctuation">.</span>MailServer<span class="token punctuation">)</span> <span class="token operator">!</span>IMAPServer</code></pre>
+
+
+</section>
+
+		<section id="IMAPServer" class="doc-node">
+			<div class="title"><h2>struct IMAPServer <a href="#IMAPServer">#</a></h2></div>
+<div class="attributes"><div class="attribute">@[heap]</div></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">IMAPServer</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	mailboxserver <span class="token operator">&</span>mailbox<span class="token punctuation">.</span>MailServer
+<span class="token punctuation">}</span></code></pre>
+<p>IMAPServer wraps the mailbox server to provide IMAP functionality</p>
+
+</section>
+
+		<section id="IMAPServer.start" class="doc-node">
+			<div class="title"><h2>fn (IMAPServer) start <a href="#IMAPServer.start">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> server IMAPServer<span class="token punctuation">)</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>Run starts the server on port 143 and accepts client connections.</p>
+
+</section>
+
+		<section id="Session" class="doc-node">
+			<div class="title"><h2>struct Session <a href="#Session">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">struct</span> <span class="token symbol">Session</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span> <span class="token keyword">mut</span><span class="token punctuation">:</span>
+	server       <span class="token operator">&</span>IMAPServer
+	username     <span class="token builtin">string</span> <span class="token comment">// Currently logged in user</span>
+	mailbox      <span class="token builtin">string</span> <span class="token comment">// Currently selected mailbox name</span>
+	conn         net<span class="token punctuation">.</span>TcpConn
+	reader       <span class="token operator">&</span>io<span class="token punctuation">.</span>BufferedReader
+	tls_active   <span class="token builtin">bool</span>     <span class="token comment">// Whether TLS is active on the connection</span>
+	capabilities <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token comment">// Current capabilities for this session</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Session represents an active IMAP client connection</p>
+
+</section>
+
+		<section id="Session.handle_authenticate" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_authenticate <a href="#Session.handle_authenticate">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_authenticate</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_authenticate processes the AUTHENTICATE command</p>
+
+</section>
+
+		<section id="Session.handle_capability" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_capability <a href="#Session.handle_capability">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_capability</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_capability processes the CAPABILITY command See RFC 3501 Section 6.1.1</p>
+
+</section>
+
+		<section id="Session.handle_close" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_close <a href="#Session.handle_close">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_close</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_close processes the CLOSE command See RFC 3501 Section 6.4.1</p>
+
+</section>
+
+		<section id="Session.handle_fetch" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_fetch <a href="#Session.handle_fetch">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_fetch</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_fetch processes the FETCH command See RFC 3501 Section 6.4.5</p>
+
+</section>
+
+		<section id="Session.handle_list" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_list <a href="#Session.handle_list">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_list</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_list processes the LIST command See RFC 3501 Section 6.3.9</p>
+
+</section>
+
+		<section id="Session.handle_login" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_login <a href="#Session.handle_login">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_login</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_login processes the LOGIN command See RFC 3501 Section 6.2.3</p>
+
+</section>
+
+		<section id="Session.handle_logout" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_logout <a href="#Session.handle_logout">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_logout</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_logout processes the LOGOUT command</p>
+
+</section>
+
+		<section id="Session.handle_select" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_select <a href="#Session.handle_select">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_select</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_select processes the SELECT command See RFC 3501 Section 6.3.2</p>
+
+</section>
+
+		<section id="Session.handle_store" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_store <a href="#Session.handle_store">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_store</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_store processes the STORE command See RFC 3501 Section 6.4.6</p>
+
+</section>
+
+		<section id="Session.handle_uid" class="doc-node">
+			<div class="title"><h2>fn (Session) handle_uid <a href="#Session.handle_uid">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">handle_uid</span><span class="token punctuation">(</span>tag <span class="token builtin">string</span><span class="token punctuation">,</span> parts <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>handle_uid processes the UID command See RFC 3501 Section 6.4.9</p>
+
+</section>
+
+		<section id="Session.mailbox_exists" class="doc-node">
+			<div class="title"><h2>fn (Session) mailbox_exists <a href="#Session.mailbox_exists">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">mailbox_exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span></code></pre>
+<p>mailbox_exists checks if the currently selected mailbox exists</p>
+
+</section>
+
+		<section id="Session.mailbox_new" class="doc-node">
+			<div class="title"><h2>fn (Session) mailbox_new <a href="#Session.mailbox_new">#</a></h2></div>
+<pre class="signature">
+<code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> self Session<span class="token punctuation">)</span> <span class="token function">mailbox_new</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">!</span></code></pre>
+<p>mailbox_new creates a new mailbox for the current user</p>
+
+</section>
+
+
+						<div class="footer">Powered by vdoc.</div>
+					</div>
+					<div class="doc-toc"><ul><li class="open"><a href="#readme_lib.mail.imap">README</a></li>
+<li class="open"><a href="#new">fn new</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#IMAPServer">struct IMAPServer</a>        <ul>
+<li><a href="#IMAPServer.start">fn start</a></li>
+</ul>
+</li>
+<li class="open"><a href="#Session">struct Session</a>        <ul>
+<li><a href="#Session.handle_authenticate">fn handle_authenticate</a></li>
+<li><a href="#Session.handle_capability">fn handle_capability</a></li>
+<li><a href="#Session.handle_close">fn handle_close</a></li>
+<li><a href="#Session.handle_fetch">fn handle_fetch</a></li>
+<li><a href="#Session.handle_list">fn handle_list</a></li>
+<li><a href="#Session.handle_login">fn handle_login</a></li>
+<li><a href="#Session.handle_logout">fn handle_logout</a></li>
+<li><a href="#Session.handle_select">fn handle_select</a></li>
+<li><a href="#Session.handle_store">fn handle_store</a></li>
+<li><a href="#Session.handle_uid">fn handle_uid</a></li>
+<li><a href="#Session.mailbox_exists">fn mailbox_exists</a></li>
+<li><a href="#Session.mailbox_new">fn mailbox_new</a></li>
+</ul>
+</li>
+</ul></div>
+				</div>
+			</div>
+		</div>
+		<script src="doc.js"></script>
+		<script async src="search_index.js"></script>
+	</body>
+</html>
