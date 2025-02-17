@@ -27,8 +27,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Vlang
-        run:
-          curl 'https://raw.githubusercontent.com/freeflowuniverse/herolib/refs/heads/development/install_v.sh' > /tmp/install_v.sh \
+        run: |
+          curl "https://raw.githubusercontent.com/freeflowuniverse/herolib/refs/heads/development/install_v.sh" > /tmp/install_v.sh
           bash /tmp/install_v.sh
 
       - name: Generate documentation
