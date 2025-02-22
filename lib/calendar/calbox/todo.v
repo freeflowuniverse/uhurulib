@@ -2,38 +2,53 @@ module calbox
 
 // Represents a todo/task
 @[heap]
-pub struct Todo {
-	CalendarComponent
+pub struct Todo implements CalendarComponent{
 pub mut:
+	uid         string
+	dtstamp     string    // Creation or last update timestamp
+	props 		map[string]string
 	start_time ?i64    // Optional start time
-	due_time   ?i64    // When the todo is due
-	duration   ?string // Estimated duration
-	completed  ?i64    // When the todo was completed
-	percent    ?int    // Percent complete (0-100)
-	rrule      ?RecurrenceRule
+	end_time   ?i64    // When the todo is due
+	summary     string
+	v_alarm 	Alarm
+	status     ?TodoStatus
+	rrule      string
 	attendees  []Attendee
 	organizer  ?Attendee
 }
 
-// Checks if a todo overlaps with a time range
-fn (todo Todo) overlaps(tr TimeRange) bool {
-	if start := todo.start_time {
-		if is_in_range(start, tr) {
-			return true
-		}
-	}
+pub fn (self Todo)  to_ics() string {
+	return ''
+}
 
-	if due := todo.due_time {
-		if is_in_range(due, tr) {
-			return true
-		}
-	}
+pub fn (self Todo) save(path string) ! {
+	return 
+}
 
-	if completed := todo.completed {
-		if is_in_range(completed, tr) {
-			return true
-		}
-	}
+enum TodoStatus {
+	needs_action
+	in_process
+	completed
+	cancelled
+}
 
-	return false
+// Converts TodoStatus enum to a string (uppercase for ICS format)
+fn todo_status_to_string(status TodoStatus) string {
+	return match status {
+		.needs_action { 'NEEDS-ACTION' }
+		.in_process   { 'IN-PROCESS' }
+		.completed    { 'COMPLETED' }
+		.cancelled    { 'CANCELLED' }
+	}
+}
+
+// Converts a string to the corresponding TodoStatus enum
+fn string_to_todo_status(status string) ?TodoStatus {
+	return match status.to_upper() {
+		'NEEDS-ACTION' { TodoStatus.needs_action }
+		'IN-PROCESS'   { TodoStatus.in_process }
+		'COMPLETED'    { TodoStatus.completed }
+		'CANCELLED'    { TodoStatus.cancelled }
+		else           { error('Invalid status: ${status}') }
+	}
 }

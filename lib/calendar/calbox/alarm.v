@@ -6,10 +6,8 @@ pub struct Alarm {
 pub mut:
 	action      AlarmAction
 	trigger     string     // When the alarm triggers (relative or absolute)
-	description string     // Used for DISPLAY and EMAIL
-	summary     string     // Used for EMAIL
-	attendees   []Attendee // Used for EMAIL
-	attach      []string   // Used for AUDIO and EMAIL attachments
+	repeat      ?int
+	duration Duration
 }
 
 // Alarm action types
