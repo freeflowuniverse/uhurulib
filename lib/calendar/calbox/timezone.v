@@ -35,6 +35,7 @@ pub fn (self TimeZoneRule) clone() TimeZoneRule {
 
 // Parses a TimeZone component from ICS string
 pub fn new_vtimezone(ics string) !TimeZone {
+    println("hereee")
     lines := ics.split_into_lines()
     mut tzid, mut last_modified := '', ''
     mut standard, mut daylight := TimeZoneRule{}, TimeZoneRule{}
@@ -72,9 +73,9 @@ pub fn new_vtimezone(ics string) !TimeZone {
             }
         }
     }
-
-    if tzid == '' || last_modified == '' {
-        return error('Missing required fields in VTIMEZONE')
+    println('tzid2---->: and ${tzid}')
+    if tzid == '' {
+        return error('Missing required fields in VTIMEZONE val ${tzid}')
     }
 
     return TimeZone{

@@ -33,78 +33,93 @@ pub fn new_calendar_item(ics string)! CalendarItem {
 	mut current_type := ""
 	mut card_type := ""
 	mut in_component := 0
+	mut in_alarm := false
+	mut alarm_lines := []string{}
 
 	for line in lines {
 		if line.starts_with('BEGIN:VCALENDAR') {
 			header << line
 		} else if line.starts_with('END:VCALENDAR') {
 			footer = line
-		} else if line.starts_with('BEGIN:') && in_component == 0{
-			// Start of a new component
-			current_component = header.clone()
-			current_component << line
-			in_component++;
-
-			// Detect component type
-			if line.contains('VEVENT') {
-				current_type = "vevent"
-			} else if line.contains('VTODO') {
-				current_type = "vtodo"
-			} else if line.contains('VJOURNAL') {
-				current_type = "vjournal"
-			}else if line.contains('VTIMEZONE') {
-				current_type = "vtimezone"
-			}else {
-				error('Unsupported ics type')
-			}
-		} else if line.starts_with('END:') && in_component == 1 {
-			current_component << line
-			current_component << 'END:VCALENDAR'
-			// Save component
-			match current_type {
-				"vevent" {
-					if card_type != '' && card_type != "vevent" {
-						error('card contain multiple types')
-					}else {
-						card_type = 'vevent'
-					}
-					mut component := new_vevent(current_component.join('\n'))!
-					components << component
-				}
-				"vtodo" {
-					if card_type != '' && card_type != "vtodo" {
-						error('card contain multiple types')
-					}else {
-						card_type = 'vtodo'
-					}
-					mut component := new_vevent(current_component.join('\n'))!
-					components << component
-				}
-				"vjournal" {
-					if card_type != '' && card_type != "vjournal" {
-						error('card contain multiple types')
-					}else {
-						card_type = 'vjournal'
-					}
-					mut component := new_vevent(current_component.join('\n'))!
-					components << component
-				}
-				"vtimezone" {
-					mut component := new_vtimezone(current_component.join('\n'))!
-					timezones << component
-				}
-				else {
-					error('Unsupported ics type')
-				}
-			}
-			in_component = 0
-		} else {
-			// Add to header or current component
-			if in_component > 0 {
+		} else if line.starts_with('BEGIN:') {
+			if line.contains('VALARM') {
+				in_alarm = true
+				alarm_lines = []
+				alarm_lines << line
+			} else if in_component == 0 {
+				// Start of a new main component
+				current_component = []string{}
 				current_component << line
-				if line.starts_with('END:') {
-					in_component--;
+				in_component++
+
+				// Detect component type
+				if line.contains('VEVENT') {
+					current_type = "vevent"
+				} else if line.contains('VTODO') {
+					current_type = "vtodo"
+				} else if line.contains('VJOURNAL') {
+					current_type = "vjournal"
+				} else if line.contains('VTIMEZONE') {
+					current_type = "vtimezone"
+				} else {
+					return error('Unsupported ics type')
 				}
+			} else {
+				current_component << line
+				in_component++
+			}
+		} else if line.starts_with('END:') {
+			if line.contains('VALARM') {
+				in_alarm = false
+				alarm_lines << line
+				current_component << alarm_lines.join('\n')
+			} else {
+				current_component << line
+				in_component--
+				
+				if in_component == 0 {
+					// Process completed component
+					match current_type {
+						"vevent" {
+							if card_type != '' && card_type != "vevent" {
+								return error('card contains multiple types')
+							}
+							card_type = 'vevent'
+							mut component := new_vevent(current_component.join('\n'))!
+							components << component
+						}
+						"vtodo" {
+							if card_type != '' && card_type != "vtodo" {
+								return error('card contains multiple types')
+							}
+							card_type = 'vtodo'
+							mut component := new_todo(current_component.join('\n'))!
+							components << component
+						}
+						"vjournal" {
+							if card_type != '' && card_type != "vjournal" {
+								return error('card contains multiple types')
+							}
+							card_type = 'vjournal'
+							mut component := new_vjournal(current_component.join('\n'))!
+							components << component
+						}
+						"vtimezone" {
+							mut component := new_vtimezone(current_component.join('\n'))!
+							timezones << component
+						}
+						else {
+							return error('Unsupported ics type')
+						}
+					}
+				}
+			}
+		} else {
+			// Add line to appropriate component
+			if in_alarm {
+				alarm_lines << line
+			} else if in_component > 0 {
+				current_component << line
 			} else {
 				header << line
 			}

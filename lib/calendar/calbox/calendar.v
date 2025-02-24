@@ -21,11 +21,10 @@ pub mut:
 }
 
 // Constructor for Calendar
-pub fn new_calendar(name string, description string, objects CalendarItem, min_date_time string, max_date_time string, max_instances int, max_attendees int, max_resource_size int) Calendar {
+pub fn new_calendar(name string, description string, min_date_time string, max_date_time string, max_instances int, max_attendees int, max_resource_size int) Calendar {
 	return Calendar{
 		name: name
 		description: description
-		objects: objects
 		min_date_time: min_date_time
 		max_date_time: max_date_time
 		max_instances: max_instances

@@ -1,6 +1,6 @@
 module caldav
 
-import freeflowuniverse.uherolib.calendar.calbox
+import freeflowuniverse.uhurulib.calendar.calbox
 import vweb
 import freeflowuniverse.herolib.core.pathlib
 import freeflowuniverse.herolib.ui.console
@@ -13,7 +13,7 @@ pub struct App {
 pub mut:
 	server_port int
 	middlewares map[string][]vweb.Middleware
-	collections map[string]&calbox.Calendar // Map of calendar collections by path
+	collections []&calbox.Calendar // Map of calendar collections by path
 }
 
 @[params]
@@ -31,7 +31,7 @@ pub fn new(args AppArgs) !&App {
 		user_db:     args.user_db.clone()
 		root_dir:    root_dir
 		server_port: args.server_port
-		collections: map[string]&calbox.Calendar{}
+		collections:[]&calbox.Calendar{}
 	}
 	app.middlewares['/'] << logging_middleware
 	app.middlewares['/'] << app.auth_middleware

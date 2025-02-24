@@ -10,6 +10,7 @@ pub mut:
 	duration Duration
 }
 
+
 // Alarm action types
 pub enum AlarmAction {
 	audio   // Play a sound
