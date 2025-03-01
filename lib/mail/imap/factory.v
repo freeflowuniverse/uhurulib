@@ -1,7 +1,7 @@
 module imap
 
 import time
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 pub fn new(mailboxserver &mailbox.MailServer) !IMAPServer {
 	mut server := IMAPServer{

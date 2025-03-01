@@ -16,8 +16,8 @@ A simple SMTP server implementation in V that integrates with the mailbox module
 The server can be started with a simple function call:
 
 ```v
-import freeflowuniverse.herolib.servers.mail.smtp
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.smtp
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 fn main() {
     // Create the mail server

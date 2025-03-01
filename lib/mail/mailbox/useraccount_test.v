@@ -1,12 +1,19 @@
 module mailbox
 
 import time
+import crypto.bcrypt
 
 fn test_user_account_mailboxes() {
+	// Generate a hash for a test password
+	password_hash := bcrypt.generate_from_password('testpass'.bytes(), bcrypt.default_cost) or {
+		panic('Failed to hash password: ${err}')
+	}
+
 	mut account := UserAccount{
-		name:        'testuser'
-		description: 'Test User'
-		emails:      ['test@example.com']
+		name:          'testuser'
+		description:   'Test User'
+		emails:        ['test@example.com']
+		password_hash: password_hash
 	}
 
 	// Test creating mailboxes
@@ -47,7 +54,7 @@ fn test_mail_server_accounts() {
 	mut server := MailServer{}
 
 	// Test creating accounts
-	server.account_create('user1', 'First User', ['user1@example.com', 'user1.alt@example.com']) or {
+	server.account_create('user1', 'First User', ['user1@example.com', 'user1.alt@example.com'], 'password1') or {
 		panic(err)
 	}
 	mut account1 := server.account_get('user1') or { panic(err) }
@@ -59,17 +66,17 @@ fn test_mail_server_accounts() {
 	assert inbox.name == 'INBOX'
 
 	// Test creating account with duplicate username
-	if _ := server.account_create('user1', 'Duplicate User', ['other@example.com']) {
+	if _ := server.account_create('user1', 'Duplicate User', ['other@example.com'], 'password2') {
 		panic('Expected error when creating account with duplicate username')
 	}
 
 	// Test creating account with duplicate email
-	if _ := server.account_create('user2', 'Second User', ['user1@example.com']) {
+	if _ := server.account_create('user2', 'Second User', ['user1@example.com'], 'password2') {
 		panic('Expected error when creating account with duplicate email')
 	}
 
 	// Test creating another valid account
-	server.account_create('user2', 'Second User', ['user2@example.com']) or { panic(err) }
+	server.account_create('user2', 'Second User', ['user2@example.com'], 'password2') or { panic(err) }
 	mut account2 := server.account_get('user2') or { panic(err) }
 	assert account2.name == 'user2'
 
@@ -109,7 +116,7 @@ fn test_end_to_end() {
 	mut server := MailServer{}
 
 	// Create account
-	server.account_create('testuser', 'Test User', ['test@example.com']) or { panic(err) }
+	server.account_create('testuser', 'Test User', ['test@example.com'], 'testpass') or { panic(err) }
 	mut account := server.account_get('testuser') or { panic(err) }
 
 	// Get INBOX and add a message

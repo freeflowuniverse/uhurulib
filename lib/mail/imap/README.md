@@ -15,8 +15,8 @@ A simple IMAP server implementation in V that supports basic mailbox operations.
 The server can be started with a simple function call:
 
 ```v
-import freeflowuniverse.herolib.servers.mail.imap
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.imap
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 fn main() {
     // Create the mail server

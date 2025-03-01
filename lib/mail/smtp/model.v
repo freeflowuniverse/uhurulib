@@ -2,7 +2,7 @@ module smtp
 
 import net
 import io
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 // SMTPServer wraps the mailbox server to provide SMTP functionality
 @[heap]

@@ -96,6 +96,8 @@ fn handle_connection(mut conn net.TcpConn, mut server IMAPServer) ! {
 			continue
 		}
 		tag := parts[0]
+		// UID is an interesting command, in that it is a modifier to other commands (namely COPY, FETCH, STORE and SEARCH). It instructs the server to use UIDs as arguments or results, rather than message sequence numbers (as is the default)
+		// so cmd can be in index 1 or 2
 		cmd := parts[1].to_upper()
 		match cmd {
 			'LOGIN' {
