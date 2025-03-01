@@ -19,20 +19,22 @@ pub fn (mut self Session) handle_login(tag string, parts []string) ! {
 	username := parts[2]
 	password := parts[3]
 
-	// For demo purposes, accept any username and look it up in the mailbox server
-	// In a real implementation, we would validate the password here
-
 	// Try to find existing account by email
 	email := '${username}@example.com'
 	existing_username := self.server.mailboxserver.account_find_by_email(email) or {
-		// Create a new account if not found
-		self.server.mailboxserver.account_create(username, username, [
-			'${username}@example.com',
-		]) or {
-			self.conn.write('${tag} NO [AUTHENTICATIONFAILED] Failed to create account\r\n'.bytes())!
-			return
-		}
-		username // Return the new username
+		self.conn.write('${tag} NO [AUTHENTICATIONFAILED] Account not found\r\n'.bytes())!
+		return
+	}
+
+	// Authenticate the user
+	auth_success := self.server.mailboxserver.authenticate(existing_username, password) or {
+		self.conn.write('${tag} NO [AUTHENTICATIONFAILED] Authentication failed\r\n'.bytes())!
+		return
+	}
+
+	if !auth_success {
+		self.conn.write('${tag} NO [AUTHENTICATIONFAILED] Invalid credentials\r\n'.bytes())!
+		return
 	}
 
 	self.username = existing_username

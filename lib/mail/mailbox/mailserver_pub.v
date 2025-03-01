@@ -1,5 +1,7 @@
 module mailbox
 
+import crypto.bcrypt
+
 // Represents the mail server that manages user accounts
 @[heap]
 pub struct MailServer {
@@ -8,7 +10,7 @@ mut:
 }
 
 // Creates a new user account
-pub fn (mut self MailServer) account_create(username string, description string, emails []string) ! {
+pub fn (mut self MailServer) account_create(username string, description string, emails []string, password string) ! {
 	if username in self.accounts {
 		return error('User ${username} already exists')
 	}
@@ -22,16 +24,28 @@ pub fn (mut self MailServer) account_create(username string, description string,
 		}
 	}
 
+	// Hash the password
+	password_hash := bcrypt.generate_from_password(password.bytes(), bcrypt.default_cost) or {
+		return error('Failed to hash password: ${err}')
+	}
+
 	mut account := &UserAccount{
-		name:        username
-		description: description
-		emails:      emails.clone()
-		mailboxes:   map[string]&Mailbox{}
+		name:          username
+		description:   description
+		emails:        emails.clone()
+		password_hash: password_hash
+		mailboxes:     map[string]&Mailbox{}
 	}
 	self.accounts[username] = account
 
 	// Create default INBOX mailbox
 	account.create_mailbox('INBOX') or { return err }
+}
+
+// Authenticates a user with the given credentials
+pub fn (mut self MailServer) authenticate(username string, password string) !bool {
+	mut account := self.account_get(username) or { return error('User ${username} not found') }
+	return account.authenticate(password)
 }
 
 // Deletes a user account

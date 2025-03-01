@@ -1,6 +1,6 @@
 module smtp
 
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 pub fn new(mailboxserver &mailbox.MailServer) !SMTPServer {
 	mut server := SMTPServer{

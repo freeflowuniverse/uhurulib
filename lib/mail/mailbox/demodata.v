@@ -14,7 +14,7 @@ pub fn (mut self MailServer) demodata() ! {
 		emails := [primary_email, alt_email]
 
 		// Create user account (INBOX is created by default)
-		self.account_create(username, names[i], emails)!
+		self.account_create(username, names[i], emails, username)! // Use username as password for demo
 
 		// Create second mailbox
 		self.mailbox_create(username, 'Sent')!

@@ -2,14 +2,27 @@ module mailbox
 
 import time
 
+import crypto.bcrypt
+
 // Represents a user account in the mail server
 @[heap]
 struct UserAccount {
 mut:
-	name        string
-	description string
-	emails      []string
-	mailboxes   map[string]&Mailbox // Map of mailbox name to mailbox instance
+	name          string
+	description   string
+	emails        []string
+	password_hash string    // Hashed password for authentication
+	mailboxes     map[string]&Mailbox // Map of mailbox name to mailbox instance
+}
+
+// Verifies user credentials
+fn (self UserAccount) authenticate(password string) bool {
+	// Verify password against stored hash
+	bcrypt.compare_hash_and_password(password.bytes(), self.password_hash.bytes()) or {
+		return false
+	}
+	
+	return true
 }
 
 // Creates a new mailbox for the user account

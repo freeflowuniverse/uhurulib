@@ -1,8 +1,8 @@
 module server
 
-import freeflowuniverse.herolib.servers.mail.mailbox
-import freeflowuniverse.herolib.servers.mail.imap
-import freeflowuniverse.herolib.servers.mail.smtp
+import freeflowuniverse.uhurulib.lib.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.imap
+import freeflowuniverse.uhurulib.lib.mail.smtp
 
 pub fn start_demo() ! {
 	// Create the server and initialize an example INBOX.
@@ -18,6 +18,6 @@ pub fn start_demo() ! {
 
 	println('servers started.')
 
-	for {
+	for { 
 	}
 }

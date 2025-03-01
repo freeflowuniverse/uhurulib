@@ -2,7 +2,7 @@ module imap
 
 import net
 import io
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 // IMAPServer wraps the mailbox server to provide IMAP functionality
 @[heap]

@@ -3,7 +3,7 @@ module smtp
 import net
 import io
 import freeflowuniverse.herolib.ui.console
-import freeflowuniverse.herolib.servers.mail.mailbox
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 import time
 
 // start starts the SMTP server on port 25 and accepts client connections
