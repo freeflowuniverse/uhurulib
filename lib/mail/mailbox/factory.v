@@ -6,10 +6,10 @@ pub fn new() &MailServer {
 	}
 }
 
-pub fn new_with_demo_data() !&MailServer {
+pub fn new_with_demo_data() &MailServer {
 	mut s := &MailServer{
 		accounts: map[string]&UserAccount{}
 	}
-	s.demodata()!
+	s.demodata() or { panic(err) }
 	return s
 }

@@ -2,6 +2,7 @@ module imap
 
 import net
 import strconv
+import freeflowuniverse.uhurulib.lib.mail.mailbox
 
 // handle_fetch processes the FETCH command
 // See RFC 3501 Section 6.4.5
@@ -61,7 +62,11 @@ pub fn (mut self Session) handle_fetch(tag string, parts []string) ! {
 	items_to_fetch = items_to_fetch.map(it.to_upper())
 
 	// Get all messages in mailbox
-	messages := self.server.mailboxserver.message_list(self.username, self.mailbox)!
+	mut messages := []mailbox.Message{}
+	messages = self.server.mailboxserver.message_list(self.username, self.mailbox) or {
+		self.conn.write('${tag} NO Failed to list messages: ${err}\r\n'.bytes())!
+		return 
+	}
 	total_messages := messages.len
 
 	// Parse sequence range
@@ -127,10 +132,10 @@ pub fn (mut self Session) handle_fetch(tag string, parts []string) ! {
 				'RFC822.SIZE' {
 					response << 'RFC822.SIZE ${msg.body.len}'
 				}
-				'BODY[TEXT]' {
+				'BODY[TEXT]', 'BODY.PEEK[TEXT]' {
 					// Mark message as seen unless using BODY.PEEK
 					if !item.contains('.PEEK') {
-						if '\\Seen' !in msg.flags {
+						if !msg.flags.contains('\\Seen') {
 							mut updated_msg := msg
 							updated_msg.flags << '\\Seen'
 							self.server.mailboxserver.message_set(self.username, self.mailbox,
@@ -144,7 +149,7 @@ pub fn (mut self Session) handle_fetch(tag string, parts []string) ! {
 				'BODY[]', 'BODY.PEEK[]' {
 					// Mark message as seen unless using BODY.PEEK
 					if !item.contains('.PEEK') {
-						if '\\Seen' !in msg.flags {
+						if !msg.flags.contains('\\Seen') {
 							mut updated_msg := msg
 							updated_msg.flags << '\\Seen'
 							self.server.mailboxserver.message_set(self.username, self.mailbox,

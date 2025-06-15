@@ -1,0 +1,33 @@
+### to check validity of v code use the following command
+
+do
+
+```
+vcheck $fullpath.v
+```
+
+### when issues found and is unused code
+
+do comment the code relevant
+
+### to run the a test v file (which is file ending with ..._test.v)
+
+do
+
+```
+vtest $fullpath_test.v
+```
+
+## to run a .vsh script (a v shell script)
+
+do
+
+```
+vrun $fullpath_test.v
+```
+
+
+### DO NOT USE std v commands
+
+allwayse use above vcheck, vtest or vrun 
+

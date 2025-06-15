@@ -28,7 +28,9 @@ pub fn (mut self Session) mailbox_new(name string) ! {
 	if self.username == '' {
 		return error('No user logged in')
 	}
-	self.server.mailboxserver.mailbox_create(self.username, name)!
+	self.server.mailboxserver.mailbox_create(self.username, name) or {
+		return error('Failed to create mailbox: ${err}')
+	}
 }
 
 // mailbox_exists checks if the currently selected mailbox exists
@@ -37,5 +39,5 @@ pub fn (mut self Session) mailbox_exists() bool {
 		return false
 	}
 	mailboxes := self.server.mailboxserver.mailbox_list(self.username) or { return false }
-	return self.mailbox in mailboxes
+	return mailboxes.contains(self.mailbox)
 }
